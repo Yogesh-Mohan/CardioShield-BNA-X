@@ -1,0 +1,28 @@
+.firebase-data { width: 100%; }
+.fb-main { display: flex; flex-direction: column; gap: 16px; }
+
+.fb-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.fb-head h3 { margin: 0; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: var(--text-main); }
+.fb-sub { margin: 4px 0 0; font-size: 0.85rem; color: #8b9bb4; }
+.fb-count { font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: #00e5ff; }
+
+.fb-controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.fb-auto-label { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #a0c4ff; cursor: pointer; }
+.fb-auto-label input { accent-color: #00e5ff; }
+
+.fb-error { background: rgba(255,60,60,0.1); border: 1px solid rgba(255,60,60,0.3); border-radius: 8px; padding: 10px; color: #ff4444; font-size: 0.85rem; }
+
+.fb-records h4 { margin: 0 0 10px; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--text-main); }
+.fb-table-wrap { overflow-x: auto; }
+
+.fb-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.fb-table th {
+  text-align: left; padding: 8px 10px; font-family: 'Orbitron', sans-serif; font-size: 0.7rem;
+  color: #8b9bb4; border-bottom: 1px solid rgba(0,229,255,0.15); letter-spacing: 1px;
+}
+.fb-table td { padding: 6px 10px; color: #ccc; border-bottom: 1px solid rgba(9, 30, 66,0.04); }
+
+.risk-pill { padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 700; }
+.risk-pill.r-normal { background: rgba(0,255,136,0.1); color: #00ff88; }
+.risk-pill.r-warning { background: rgba(255,170,0,0.1); color: #ffaa00; }
+.risk-pill.r-critical { background: rgba(255,60,60,0.1); color: #ff4444; }

@@ -1,0 +1,90 @@
+/* ScenarioSelector.css — shared demo scenario switcher */
+
+.scenario-selector {
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.scenario-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.scenario-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.scenario-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.scenario-btn {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 9px 6px;
+  border-radius: 7px;
+  cursor: pointer;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(160, 196, 255, 0.15);
+  transition: all 0.15s ease;
+}
+
+.scenario-btn:hover {
+  color: #fff;
+  border-color: var(--sev);
+}
+
+.scenario-btn.active {
+  color: var(--sev);
+  border-color: var(--sev);
+  background: color-mix(in srgb, var(--sev) 12%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--sev) 25%, transparent);
+}
+
+.scenario-blurb {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.35;
+}
+
+.scenario-selector.compact .scenario-options {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.scenario-selector.compact .scenario-blurb {
+  display: none;
+}
+
+.scenario-selector.compact {
+  padding: 10px;
+}
+
+.live-active-box {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--ok);
+  border-radius: 8px;
+}
+
+.live-status-pill {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}

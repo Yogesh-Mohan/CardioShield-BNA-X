@@ -1,0 +1,62 @@
+.pacemaker-sim { width: 100%; }
+.pacemaker-main { display: flex; flex-direction: column; gap: 18px; }
+
+.pm-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.pm-head h3 { margin: 0; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: var(--text-main); }
+.pm-sub { margin: 4px 0 0; font-size: 0.85rem; color: #8b9bb4; }
+
+.pm-mode-badge {
+  padding: 6px 16px; border-radius: 20px; font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; flex-shrink: 0;
+}
+.pm-mode-badge.standby { background: rgba(0,229,255,0.1); color: #00e5ff; border: 1px solid rgba(0,229,255,0.3); }
+.pm-mode-badge.demand { background: rgba(255,170,0,0.12); color: #ffaa00; border: 1px solid rgba(255,170,0,0.3); }
+.pm-mode-badge.fixed { background: rgba(255,100,0,0.12); color: #ff6600; border: 1px solid rgba(255,100,0,0.3); }
+.pm-mode-badge.overdrive { background: rgba(255,60,60,0.15); color: #ff4444; border: 1px solid rgba(255,60,60,0.4); }
+
+.sim-safety-banner {
+  background: rgba(255,170,0,0.08); border: 1px solid rgba(255,170,0,0.25); border-radius: 8px;
+  padding: 10px 14px; font-size: 0.8rem; color: #ffaa00; text-align: center;
+}
+
+.pm-status-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.pm-stat {
+  background: rgba(0,0,0,0.25); border-radius: 8px; padding: 12px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.pm-stat-label { font-size: 0.7rem; color: #8b9bb4; letter-spacing: 1px; text-transform: uppercase; font-family: 'Orbitron', sans-serif; }
+.pm-stat-val { font-size: 1.3rem; font-weight: 700; color: #a0c4ff; }
+.pm-stat-val em { font-style: normal; font-size: 0.75rem; color: #666; }
+.level-normal { color: #00ff88; }
+.level-warning { color: #ffaa00; }
+.level-critical { color: #ff4444; }
+
+.pm-decision h4 { margin: 0 0 6px; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--text-main); }
+.pm-decision p { color: #a0c4ff; font-size: 0.9rem; margin: 0; }
+
+.pm-rhythm-viz { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
+.rhythm-bar { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px; }
+.rhythm-label { font-size: 0.7rem; color: #8b9bb4; letter-spacing: 1px; font-family: 'Orbitron', sans-serif; display: block; margin-bottom: 8px; }
+.rhythm-wave { display: flex; gap: 3px; align-items: flex-end; height: 50px; }
+.wave-bar { width: 100%; border-radius: 2px 2px 0 0; transition: height 0.3s; }
+.wave-bar.intrinsic { background: rgba(255,100,100,0.5); }
+.wave-bar.paced { background: rgba(0,255,136,0.5); }
+
+.pm-controls { display: flex; gap: 12px; align-items: center; }
+
+.pm-timeline h4 { margin: 0 0 10px; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--text-main); }
+.pm-events { max-height: 200px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+.pm-event {
+  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  padding: 8px 12px; border-radius: 6px; background: rgba(0,0,0,0.2);
+  border-left: 3px solid #555; font-size: 0.8rem;
+}
+.pm-event.demand { border-left-color: #ffaa00; }
+.pm-event.fixed { border-left-color: #ff6600; }
+.pm-event.overdrive { border-left-color: #ff4444; }
+.pm-evt-time { color: #8b9bb4; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; width: 80px; }
+.pm-evt-transition { color: #ccc; }
+.pm-evt-hr { color: #a0c4ff; }
+.pm-evt-rate { color: #00ff88; }
+
+@media (max-width: 768px) { .pm-status-row { grid-template-columns: 1fr 1fr; } .pm-rhythm-viz { grid-template-columns: 1fr; } }

@@ -1,0 +1,302 @@
+/* EcgMonitor.css — Step 5 monitoring view */
+
+.monitor-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.monitor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.signal-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  border: 1px solid;
+}
+
+.signal-chip .signal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: blink 1.6s infinite;
+}
+
+.signal-chip.ok {
+  color: var(--ok);
+  background: rgba(0, 255, 136, 0.08);
+  border-color: rgba(0, 255, 136, 0.35);
+}
+
+.signal-chip.warn {
+  color: var(--warn);
+  background: rgba(255, 170, 0, 0.08);
+  border-color: rgba(255, 170, 0, 0.35);
+}
+
+.signal-chip.bad {
+  color: var(--bad);
+  background: rgba(255, 77, 77, 0.08);
+  border-color: rgba(255, 77, 77, 0.4);
+}
+
+.monitor-clock {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.monitor-controls {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.ctl-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: var(--accent);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.ctl-btn:hover {
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.ctl-btn.start {
+  color: var(--ok);
+  border-color: rgba(0, 255, 136, 0.45);
+}
+
+.ctl-btn.start:hover {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.ctl-btn.reset {
+  color: var(--text-muted);
+  border-color: rgba(160, 196, 255, 0.3);
+}
+
+.ctl-btn.reset:hover {
+  background: rgba(160, 196, 255, 0.08);
+}
+
+.monitor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(280px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.monitor-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.monitor-main-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.monitor-main-head h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: var(--text-main);
+}
+
+.demo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  color: var(--warn);
+  border: 1px solid rgba(255, 170, 0, 0.35);
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.demo-inline {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.ecg-canvas-wrap {
+  position: relative;
+  height: 260px;
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.04), transparent 70%),
+    #04070f;
+  border: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.ecg-canvas-wrap canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ecg-paused-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 4px;
+  color: var(--warn);
+  background: rgba(3, 8, 22, 0.55);
+  backdrop-filter: blur(1px);
+}
+
+.ecg-derived h4 {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.derived-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.derived-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  border-left: 2px solid var(--accent);
+}
+
+.derived-name {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.derived-val {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.derived-val em {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-left: 3px;
+}
+
+.derived-status {
+  font-size: 0.66rem;
+  letter-spacing: 1px;
+}
+
+.s-nominal {
+  color: var(--ok);
+}
+
+.s-elevated {
+  color: var(--warn);
+}
+
+.s-outlier {
+  color: var(--bad);
+}
+
+.empty-hint {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 14px;
+  border: 1px dashed rgba(9, 30, 66, 0.12);
+  border-radius: 8px;
+}
+
+.monitor-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vitals-panel h3 {
+  margin: 0 0 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--text-main);
+}
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.vitals-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(0, 229, 255, 0.08);
+}
+
+.vitals-label {
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.vitals-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.vitals-unit {
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+@media (max-width: 1024px) {
+  .monitor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecg-canvas-wrap {
+    height: 220px;
+  }
+}

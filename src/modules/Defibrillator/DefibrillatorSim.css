@@ -1,0 +1,72 @@
+.defib-sim { width: 100%; }
+.defib-main { display: flex; flex-direction: column; gap: 18px; }
+
+.defib-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.defib-head h3 { margin: 0; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: var(--text-main); }
+.defib-sub { margin: 4px 0 0; font-size: 0.85rem; color: #8b9bb4; }
+
+.defib-phase-badge {
+  padding: 6px 16px; border-radius: 20px; font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; flex-shrink: 0;
+}
+.defib-phase-badge.idle { background: rgba(0,229,255,0.1); color: #00e5ff; border: 1px solid rgba(0,229,255,0.3); }
+.defib-phase-badge.analyzing { background: rgba(255,170,0,0.12); color: #ffaa00; border: 1px solid rgba(255,170,0,0.3); animation: pulse-badge 1s infinite; }
+.defib-phase-badge.charging { background: rgba(255,100,0,0.12); color: #ff6600; border: 1px solid rgba(255,100,0,0.3); }
+.defib-phase-badge.ready { background: rgba(255,60,60,0.15); color: #ff4444; border: 1px solid rgba(255,60,60,0.4); animation: pulse-badge 0.5s infinite; }
+.defib-phase-badge.delivered { background: rgba(255,255,0,0.15); color: var(--text-main)f00; border: 1px solid rgba(255,255,0,0.4); }
+.defib-phase-badge.recovery { background: rgba(0,255,136,0.1); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
+
+@keyframes pulse-badge { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.defib-status-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.defib-stat {
+  background: rgba(0,0,0,0.25); border-radius: 8px; padding: 12px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.defib-stat-label { font-size: 0.7rem; color: #8b9bb4; letter-spacing: 1px; text-transform: uppercase; font-family: 'Orbitron', sans-serif; }
+.defib-stat-val { font-size: 1.3rem; font-weight: 700; color: #a0c4ff; }
+.defib-stat-val em { font-style: normal; font-size: 0.75rem; color: #666; }
+
+.defib-workflow h4 { margin: 0 0 6px; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--text-main); }
+.workflow-desc { color: #a0c4ff; font-size: 0.9rem; margin: 0; }
+
+.charge-bar-wrap {
+  margin-top: 10px; height: 24px; background: rgba(0,0,0,0.3); border-radius: 6px;
+  overflow: hidden; position: relative;
+}
+.charge-bar {
+  height: 100%; background: linear-gradient(90deg, #ff6600, #ff4444);
+  border-radius: 6px; transition: width 0.3s;
+}
+.charge-label {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; color: var(--text-main); font-family: 'Orbitron', sans-serif;
+}
+
+.shock-flash {
+  margin-top: 10px; padding: 18px; text-align: center; font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem; color: var(--text-main)f00; background: rgba(255,255,0,0.08); border: 1px solid rgba(255,255,0,0.3);
+  border-radius: 8px; animation: flash 0.3s 3;
+}
+@keyframes flash { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+.defib-shock-btn {
+  padding: 12px 24px; border-radius: 8px; border: 2px solid #ff4444;
+  background: rgba(255,60,60,0.15); color: #ff4444; font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+}
+.defib-shock-btn:hover { background: rgba(255,60,60,0.3); box-shadow: 0 0 20px rgba(255,60,60,0.4); }
+
+.defib-controls { display: flex; gap: 12px; align-items: center; }
+
+.defib-timeline h4 { margin: 0 0 10px; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--text-main); }
+.defib-events { max-height: 200px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+.defib-event {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding: 8px 12px; border-radius: 6px; background: rgba(0,0,0,0.2); font-size: 0.8rem;
+}
+.defib-evt-time { color: #8b9bb4; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; width: 80px; }
+.defib-evt-type { padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; background: rgba(255,170,0,0.1); color: #ffaa00; }
+.defib-evt-detail { color: #ccc; flex: 1; }
+
+@media (max-width: 768px) { .defib-status-row { grid-template-columns: 1fr 1fr; } }

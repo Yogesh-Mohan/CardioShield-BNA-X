@@ -1,0 +1,158 @@
+/* NeuralSchemaPanel.css — Step 8 */
+
+.schema-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.schema-head h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: var(--text-main);
+}
+
+.schema-sub { margin: 4px 0 0; font-size: 0.78rem; color: var(--text-muted); }
+
+.trend-chip {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 14px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.trend-chip.up { color: var(--warn); border-color: rgba(255,170,0,0.4); }
+.trend-chip.down { color: var(--ok); border-color: rgba(0,255,136,0.4); }
+.trend-chip.flat { color: var(--text-muted); border-color: rgba(160,196,255,0.25); }
+
+.baseline-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+
+.baseline-pill {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 14px;
+  border: 1px solid;
+}
+.baseline-pill.ready { color: var(--ok); border-color: rgba(0,255,136,0.4); background: rgba(0,255,136,0.06); }
+.baseline-pill.learning { color: var(--warn); border-color: rgba(255,170,0,0.4); background: rgba(255,170,0,0.06); }
+
+.deviation-gauge-wrap { margin-bottom: 16px; }
+.gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.gauge-value { font-family: 'Orbitron', sans-serif; color: var(--text-main); }
+
+.deviation-gauge {
+  position: relative;
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(9, 30, 66, 0.07);
+  overflow: visible;
+}
+.deviation-gauge i {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--ok), var(--warn) 60%, var(--bad));
+  transition: width 0.3s ease;
+}
+.gauge-mark {
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 16px;
+}
+.gauge-mark.warn { background: var(--warn); opacity: 0.7; }
+.gauge-mark.crit { background: var(--bad); opacity: 0.7; }
+
+.deviation-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.deviation-row {
+  display: grid;
+  grid-template-columns: 52px 1fr 18px 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+.dev-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.dev-bars { display: flex; flex-direction: column; gap: 2px; }
+.dev-bar {
+  position: relative;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(9, 30, 66, 0.07);
+}
+.dev-bar i {
+  position: absolute;
+  top: -1px;
+  width: 3px;
+  height: 7px;
+  border-radius: 1px;
+  transform: translateX(-50%);
+}
+.dev-bar.baseline i { background: #5a7ba6; }
+.dev-bar.current i { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+
+.dev-dir { text-align: center; font-size: 0.85rem; }
+.dir-above { color: var(--warn); }
+.dir-below { color: var(--accent); }
+.dir-none { color: var(--text-muted); }
+
+.dev-val { font-size: 0.82rem; color: var(--text-main); text-align: right; }
+
+.dominant-block h4 {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.dominant-list { display: flex; gap: 8px; flex-wrap: wrap; }
+.dominant-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(160,196,255,0.2);
+  color: #dfe9ff;
+}
+.dominant-tag.rank-1 { border-color: var(--bad); color: var(--bad); }
+.dominant-tag.rank-2 { border-color: var(--warn); color: var(--warn); }
+.dominant-tag.rank-3 { border-color: var(--accent); color: var(--accent); }
+
+.terminology-note {
+  margin-top: 16px;
+  padding-top: 12px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(160, 196, 255, 0.08);
+}

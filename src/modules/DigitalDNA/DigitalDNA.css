@@ -1,0 +1,189 @@
+/* DigitalDNA.css — Step 6 construct + inspector */
+
+.dna-view {
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.dna-stage-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+}
+
+.dna-stage-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dna-stage-head h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.dna-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.dna-stage {
+  position: relative;
+  flex: 1;
+  min-height: 400px;
+  margin-top: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(0, 229, 255, 0.06), transparent 65%),
+    #04070f;
+  border: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.dna-scene {
+  position: absolute;
+  inset: 0;
+}
+
+.dna-scene canvas {
+  display: block;
+}
+
+.dna-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.dna-hint {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+
+/* Inspector */
+.dna-inspector {
+  display: flex;
+  flex-direction: column;
+}
+
+.dna-inspector h3 {
+  margin: 0 0 14px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.inspector-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-dim);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 0.85rem;
+  min-height: 220px;
+}
+
+.inspector-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.inspector-source {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  margin: 2px 0 14px;
+  text-transform: uppercase;
+}
+
+.inspector-rows {
+  margin: 0 0 12px;
+}
+
+.inspector-rows>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(160, 196, 255, 0.08);
+}
+
+.inspector-rows dt {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+.inspector-rows dd {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.inspector-desc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.contribution-bar-wrap {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+
+.contribution-bar {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.contribution-bar.pos {
+  background: var(--ok);
+}
+
+.contribution-bar.neg {
+  background: var(--bad);
+}
+
+.terminology-note {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  border-top: 1px solid rgba(160, 196, 255, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .dna-view {
+    grid-template-columns: 1fr;
+  }
+
+  .dna-stage-panel {
+    min-height: 380px;
+  }
+}

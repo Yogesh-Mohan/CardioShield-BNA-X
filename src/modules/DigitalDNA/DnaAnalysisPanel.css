@@ -1,0 +1,181 @@
+/* DnaAnalysisPanel.css — Step 7 analysis table + time comparison */
+
+.analysis-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.analysis-head h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.analysis-table th {
+  text-align: left;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.18);
+}
+
+.analysis-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid rgba(160, 196, 255, 0.07);
+  color: #dfe9ff;
+}
+
+.cell-feature {
+  font-weight: 600;
+  color: #fff;
+}
+
+.cell-source {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+}
+
+.cell-unit {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.norm-cell {
+  display: inline-block;
+  vertical-align: middle;
+  width: 64px;
+  height: 5px;
+  margin-right: 8px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.norm-cell i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.trend {
+  font-size: 0.85rem;
+}
+
+.trend.up {
+  color: var(--warn);
+}
+
+.trend.down {
+  color: var(--accent);
+}
+
+.trend.flat {
+  color: var(--text-dim);
+}
+
+.contrib-cell {
+  display: inline-block;
+  vertical-align: middle;
+  width: 56px;
+  height: 5px;
+  margin-right: 8px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.contrib-cell i {
+  display: block;
+  height: 100%;
+}
+
+.contrib-cell i.pos {
+  background: var(--ok);
+}
+
+.contrib-cell i.neg {
+  background: var(--bad);
+}
+
+/* Time comparison strip */
+.time-compare {
+  margin-top: 20px;
+}
+
+.time-compare h4 {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+
+.time-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.time-label {
+  width: 52px;
+  flex-shrink: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+
+.time-cells {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 34px;
+  flex: 1;
+  padding: 2px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.time-cells i {
+  flex: 1;
+  min-width: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.empty-hint-inline {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .analysis-table .cell-source {
+    display: none;
+  }
+}
